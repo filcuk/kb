@@ -1,0 +1,29 @@
+---
+title: Administration
+description: 
+published: true
+date: 2024-10-31T21:57:35.341Z
+tags: 
+editor: markdown
+dateCreated: 2024-10-31T21:57:35.341Z
+---
+
+# Resources
+
+# Troubleshooting
+## Permissions
+### EACCES: permission denied
+Ensure that the container has access to write to target
+```
+chown -R 1000:1000 ./<target_dir>
+```
+> Default container uses node 1000:1000 user & group. Lscr.io container may use custom ones.
+{.is-info}
+
+### WARNING: UNPROTECTED PRIVATE KEY FILE!
+Ensure that your key has `0600 -rw-------` access:
+```
+chmod 0600 ./data/secure/git-ssh.pem
+```
+> You can check current ownership and permissions using `ls -l`
+{.is-success}
