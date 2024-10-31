@@ -2,7 +2,7 @@
 title: Administration
 description: 
 published: true
-date: 2024-10-31T22:13:52.681Z
+date: 2024-10-31T22:14:28.899Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-31T21:57:35.341Z
@@ -25,7 +25,7 @@ If the problem persists, ensure the 'Target Folder Path' is correct:
 ./data/export	> /app/wiki/data/export
 /data/export	> /data/export
 ```
-Which assumes the volumes are mounted in [[Docker Compose]]:
+Which assumes the volumes are mounted in Docker Compose:
 ```
     volumes:
       - $DOCKERDIR/appdata/wiki/app/config:/config:rw
