@@ -2,7 +2,7 @@
 title: Administration
 description: 
 published: true
-date: 2024-10-31T22:11:23.582Z
+date: 2024-10-31T22:13:52.681Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-31T21:57:35.341Z
@@ -24,6 +24,12 @@ If the problem persists, ensure the 'Target Folder Path' is correct:
 ```
 ./data/export	> /app/wiki/data/export
 /data/export	> /data/export
+```
+Which assumes the volumes are mounted in [[Docker Compose]]:
+```
+    volumes:
+      - $DOCKERDIR/appdata/wiki/app/config:/config:rw
+      - $DOCKERDIR/appdata/wiki/app/data:/data:rw
 ```
 
 ### WARNING: UNPROTECTED PRIVATE KEY FILE!
