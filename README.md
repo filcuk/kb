@@ -1,0 +1,2 @@
+# kb
+General knowledge base
