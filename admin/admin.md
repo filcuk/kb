@@ -2,7 +2,7 @@
 title: Administration
 description: 
 published: true
-date: 2024-10-31T21:57:35.341Z
+date: 2024-10-31T22:07:28.086Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-31T21:57:35.341Z
@@ -19,6 +19,12 @@ chown -R 1000:1000 ./<target_dir>
 ```
 > Default container uses node 1000:1000 user & group. Lscr.io container may use custom ones.
 {.is-info}
+
+If the problem persists, ensure the 'Target Folder Path' is correct:
+```
+./data/export	> /app/wiki/data/export
+/data/export	> /data/export
+```
 
 ### WARNING: UNPROTECTED PRIVATE KEY FILE!
 Ensure that your key has `0600 -rw-------` access:
