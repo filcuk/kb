@@ -2,7 +2,7 @@
 title: SSAS
 description: SQL Server Analysis Services
 published: true
-date: 2024-11-15T16:58:50.430Z
+date: 2024-11-15T17:26:19.892Z
 tags: 
 editor: markdown
 dateCreated: 2024-11-13T11:38:19.453Z
@@ -10,6 +10,12 @@ dateCreated: 2024-11-13T11:38:19.453Z
 
 # Troubleshooting
 ## Processing
+### Chech last time a cube was processed
+In [SSAS](/en/software/sql-server/ssas), run the following [MDX](/en/language/mdx) query:
+```mdx
+SELECT CUBE_NAME, LAST_DATA_UPDATE FROM $System.MDSCHEMA_CUBES
+```
+
 ### Kill stuck cube processing job
 In [SSAS](/en/software/sql-server/ssas), run the following [MDX](/en/language/mdx) query:
 ```mdx
@@ -28,7 +34,7 @@ Then run the following [XMLA](/en/language/xmla) query using IDs from the previo
       <ConnectionID>...</ConnectionID>  
       <SessionID>...</SessionID>  
       <SPID>...</SPID>  
-      <CancelAssociated>...</CancelAssociated>  
+      <CancelAssociated>1 or 0</CancelAssociated>  
    </Cancel>  
 </Command>  
 ```
