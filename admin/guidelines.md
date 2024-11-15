@@ -2,13 +2,22 @@
 title: Guidelines
 description: 
 published: true
-date: 2024-11-15T17:15:59.747Z
+date: 2024-11-15T19:50:49.966Z
 tags: 
 editor: markdown
 dateCreated: 2024-11-05T19:46:05.266Z
 ---
 
 # Content guidelines
+## Formatting
+- Proper case headers
+
+## Structure
+```
+# Category (About, Troubleshooting, ...)
+## Sub-category (Setup, Environment, ...)
+### Topic (Platform, Variables, ...)
+```
 
 # Examples
 ## MD
