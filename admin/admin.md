@@ -2,7 +2,7 @@
 title: Administration
 description: 
 published: true
-date: 2024-10-31T22:14:28.899Z
+date: 2024-11-15T17:12:31.736Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-31T21:57:35.341Z
@@ -11,6 +11,11 @@ dateCreated: 2024-10-31T21:57:35.341Z
 # Resources
 
 # Troubleshooting
+## Interface
+### Github page link doesn't work on default langulage with locales
+See [github.com](https://github.com/requarks/wiki/discussions/7297).
+Locales have been disabled as a 'temporary' workaround.
+
 ## Permissions
 ### EACCES: permission denied
 Ensure that the container has access to write to target
