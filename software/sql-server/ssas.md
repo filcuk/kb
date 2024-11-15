@@ -2,15 +2,15 @@
 title: SSAS
 description: SQL Server Analysis Services
 published: true
-date: 2024-11-15T16:58:19.449Z
+date: 2024-11-15T16:58:50.430Z
 tags: 
 editor: markdown
 dateCreated: 2024-11-13T11:38:19.453Z
 ---
 
 # Troubleshooting
-## 
-### Kill stuck cube processing
+## Processing
+### Kill stuck cube processing job
 In [SSAS](/en/software/sql-server/ssas), run the following [MDX](/en/language/mdx) query:
 ```mdx
 SELECT * FROM $SYSTEM.DISCOVER_CONNECTIONS
