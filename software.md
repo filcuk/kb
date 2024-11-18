@@ -2,7 +2,7 @@
 title: Software
 description: 
 published: true
-date: 2024-11-18T11:52:02.850Z
+date: 2024-11-18T11:59:14.681Z
 tags: 
 editor: markdown
 dateCreated: 2024-11-18T11:52:02.850Z
