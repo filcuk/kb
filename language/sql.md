@@ -2,7 +2,7 @@
 title: SQL
 description: Structured Query Language
 published: true
-date: 2024-11-19T10:27:03.057Z
+date: 2024-11-19T10:48:11.736Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-31T22:51:18.475Z
@@ -37,5 +37,5 @@ FETCH FIRST 5 ROWS;
 
 # Topics
 ## Conversion
-- [Date & Time](sql/conversion/date-time)
+- [Date & Time](conversion/date-time)
 {.links-list}
