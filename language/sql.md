@@ -2,7 +2,7 @@
 title: SQL
 description: Structured Query Language
 published: true
-date: 2024-11-03T21:26:56.908Z
+date: 2024-11-19T10:27:03.057Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-31T22:51:18.475Z
@@ -10,9 +10,9 @@ dateCreated: 2024-10-31T22:51:18.475Z
 
 # Flavours
 There are many 'flavours' of SQL. Some of those include:
-- [IBM Db2 *Db2*](t-sql)
-- [MS SQL Server (2016+) *T-SQL*](t-sql)
-- [MS Access *JET SQL*](jet-sql)
+- [IBM Db2 *Db2*](sql/flavour/db2)
+- [MS SQL Server (2016+) *T-SQL*](sql/flavour/t-sql)
+- [MS Access *JET SQL*](sql/flavour/jet-sql)
 {.links-list}
 
 I will attempt to keep things simple by defining the flavour for each snippet, using 'SQL' for generic code:
@@ -34,3 +34,8 @@ SELECT *
 FROM table1
 FETCH FIRST 5 ROWS;
 ```
+
+# Topics
+## Conversion
+- [Date & Time](sql/conversion/date-time)
+{.links-list}
