@@ -2,14 +2,14 @@
 title: Tables
 description: 
 published: true
-date: 2024-12-20T16:21:00.101Z
+date: 2024-12-20T16:21:36.033Z
 tags: 
 editor: markdown
 dateCreated: 2024-12-20T16:21:00.101Z
 ---
 
-### Duplicate a table
-#### Method 1
+# Duplicate a table
+## Method 1
 This method only works if the target table doesn't exist yet.
 ### Example {.tabset}
 #### T-SQL
@@ -20,7 +20,7 @@ SELECT *
 ```
 ### End {.tabset}
 
-#### Method 2
+## Method 2
 This method works for existing tables with identical columns.
 ### Example {.tabset}
 #### T-SQL
@@ -32,7 +32,7 @@ SELECT *
 ```
 ### End {.tabset}
 
-#### Method 3
+## Method 3
 This final method copies the identity, instead of incrementing automatically.
 It is necessary to declare individual columns in this case.
 ### Example {.tabset}
