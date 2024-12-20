@@ -2,7 +2,7 @@
 title: Tables
 description: 
 published: true
-date: 2024-12-20T16:21:36.033Z
+date: 2024-12-20T16:23:06.007Z
 tags: 
 editor: markdown
 dateCreated: 2024-12-20T16:21:00.101Z
@@ -47,7 +47,7 @@ INSERT
      , column2
      )
 SELECT 
-			 column1
+       column1
      , column2
   FROM table1
 
