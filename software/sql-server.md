@@ -2,13 +2,14 @@
 title: SQL Server
 description: Microsoft SQL Server is a proprietary relational database management system developed by Microsoft.
 published: true
-date: 2024-12-20T16:08:08.646Z
+date: 2024-12-20T16:09:29.958Z
 tags: 
 editor: markdown
 dateCreated: 2024-11-18T11:59:01.049Z
 ---
 
-# Record management
+# Object management
+## Tables
 ### DELETE vs TRUNCATE
 `TRUNCATE TABLE` is the recommended way to delete entire table:
 - May require fewer locks (typically only a single schema modification lock at a table level)
