@@ -2,7 +2,7 @@
 title: Power Automate
 description: SaaS platform by Microsoft for optimizing and automating workflows and business processes
 published: true
-date: 2025-01-14T15:13:35.994Z
+date: 2025-01-14T16:35:05.008Z
 tags: saas, ms-power-automate, wdl
 editor: markdown
 dateCreated: 2025-01-14T14:19:58.918Z
@@ -106,3 +106,111 @@ mul(
   )
 ,5)
 ```
+# Special
+#### Test against crontab-style schedule
+**Now**: compose an array of current date/time values:
+```wdl
+[
+  @{int(formatDateTime(utcNow(), 'mm'))},
+  @{int(formatDateTime(utcNow(), 'HH'))},
+  @{int(formatDateTime(utcNow(), 'dd'))},
+  @{int(formatDateTime(utcNow(), 'MM'))},
+  @{int(replace(string(dayOfWeek(utcNow())), '7', '0'))}
+]
+```
+**Input**: we're using a compose `Schedule` that contains a crontab string and split that into an array:
+```wdl
+[
+  "@{split(outputs('Schedule'), ' ')?[0]}",
+  "@{split(outputs('Schedule'), ' ')?[1]}",
+  "@{split(outputs('Schedule'), ' ')?[2]}",
+  "@{split(outputs('Schedule'), ' ')?[3]}",
+  "@{split(outputs('Schedule'), ' ')?[4]}"
+]
+```
+**Output**: lets compare the two arrays:
+> Below implementation supports operators `*`, `,` and `-`.
+> Operator `/` is not supported.
+{.is-warning}
+```wdl
+[
+  @{if(
+    equals(outputs('Input')?[0], '*'),
+    true,
+if(
+    isInt(outputs('Input')?[0]),
+    equals(int(outputs('Input')?[0]), outputs('Now')?[0]),
+if(
+    contains(outputs('Input')?[0], ','),
+    contains(split(outputs('Input')?[0], ','), string(outputs('Now')?[0])),
+if(
+    contains(outputs('Input')?[0], '-'),
+    contains(range(int(split(outputs('Input')?[0], '-')[0]), int(split(outputs('Input')?[0], '-')[1])), outputs('Now')?[0]),
+    false
+))))},
+  @{if(
+    equals(outputs('Input')?[1], '*'),
+    true,
+if(
+    isInt(outputs('Input')?[1]),
+    equals(int(outputs('Input')?[1]), outputs('Now')?[1]),
+if(
+    contains(outputs('Input')?[1], ','),
+    contains(split(outputs('Input')?[1], ','), string(outputs('Now')?[1])),
+if(
+    contains(outputs('Input')?[1], '-'),
+    contains(range(int(split(outputs('Input')?[1], '-')[0]), int(split(outputs('Input')?[1], '-')[1])), outputs('Now')?[1]),
+    false
+))))},
+  @{if(
+    equals(outputs('Input')?[2], '*'),
+    true,
+if(
+    isInt(outputs('Input')?[2]),
+    equals(int(outputs('Input')?[2]), outputs('Now')?[2]),
+if(
+    contains(outputs('Input')?[2], ','),
+    contains(split(outputs('Input')?[2], ','), string(outputs('Now')?[2])),
+if(
+    contains(outputs('Input')?[2], '-'),
+    contains(range(int(split(outputs('Input')?[2], '-')[0]), int(split(outputs('Input')?[2], '-')[1])), outputs('Now')?[2]),
+    false
+))))},
+  @{if(
+    equals(outputs('Input')?[3], '*'),
+    true,
+if(
+    isInt(outputs('Input')?[3]),
+    equals(int(outputs('Input')?[3]), outputs('Now')?[3]),
+if(
+    contains(outputs('Input')?[3], ','),
+    contains(split(outputs('Input')?[3], ','), string(outputs('Now')?[3])),
+if(
+    contains(outputs('Input')?[3], '-'),
+    contains(range(int(split(outputs('Input')?[3], '-')[0]), int(split(outputs('Input')?[3], '-')[1])), outputs('Now')?[3]),
+    false
+))))},
+  @{if(
+    equals(outputs('Input')?[4], '*'),
+    true,
+if(
+    isInt(outputs('Input')?[4]),
+    equals(int(outputs('Input')?[4]), outputs('Now')?[4]),
+if(
+    contains(outputs('Input')?[4], ','),
+    contains(split(outputs('Input')?[4], ','), string(outputs('Now')?[4])),
+if(
+    contains(outputs('Input')?[4], '-'),
+    contains(range(int(split(outputs('Input')?[4], '-')[0]), int(split(outputs('Input')?[4], '-')[1])), outputs('Now')?[4]),
+    false
+))))}
+]
+```
+That will leave us with an array of booleans.
+We can use `contains()` to check if array contains any `false`.
+In case it doesn't, it means crontab matches current time.
+```wdl
+@{contains(outputs('Output'), false)}
+```
+
+
