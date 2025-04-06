@@ -2,14 +2,14 @@
 title: n8n
 description: Workflow automation
 published: true
-date: 2025-04-06T20:16:13.345Z
+date: 2025-04-06T20:16:27.638Z
 tags: self-hosted, fos
 editor: markdown
 dateCreated: 2025-04-06T20:06:33.911Z
 ---
 
 # Tips
-### Outputting duration of execution
+### Duration of execution
 #### Current execution in seconds
 1. Create 'Edit fields' node named 'Variables' and add field `startTime` = `{{ $now.toISO() }}`
 1. Add this to output: `{{ $now.diff(DateTime.fromISO($('Variables').item.json.startTime)).as('seconds')}}s`
