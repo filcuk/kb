@@ -2,11 +2,15 @@
 title: NocoDB
 description: Spreadsheet interface for creating online databases
 published: true
-date: 2025-04-06T20:26:26.359Z
+date: 2025-04-06T20:35:05.143Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-06T20:06:53.307Z
 ---
+
+- [Home *nocodb.com*](https://nocodb.com/)
+- [Github *github.com/nocodb*](https://github.com/nocodb)
+{.links-list}
 
 # Tips
 ### Create column with unique constraint
